@@ -3,40 +3,18 @@ main.py — Zerith Security
 Tüm sistemler dahil: Caps Lock Filtresi, Detaylı Log, Çekiliş Rolü, Muafiyet
 """
 
+# --- 1. BÖLÜM: KURALLAR (IMPORTLAR) ---
 import discord
-from discord import app_commands
-from discord.ext import commands, tasks
-from datetime import timedelta, datetime, timezone
-import random
-import asyncio
-import json
-import os
-import sqlite3
-import time
-import re
-import hashlib
-import ipaddress
-import socket
-import urllib.parse
-import base64
-import string
-import secrets
-from typing import Optional
-from collections import defaultdict
-from minigames import setup_minigames
-from yeni_sistemler import setup_new_systems, antiraid_on_member_join, antiraid_on_message
-
+from discord.ext import commands
 import os
 from dotenv import load_dotenv
 
-# .env dosyasını oku (yerel çalışırken işine yarar)
+# --- 2. BÖLÜM: AYARLAR ---
 load_dotenv()
+intents = discord.Intents.default()
+intents.message_content = True 
+bot = commands.Bot(command_prefix='!', intents=intents)
 
-# Token'ı Render'dan veya .env'den çeker
-token = os.getenv('TOKEN')
-
-# Botu çalıştıran satır (genelde en alttadır)
-bot.run(token)
 
 # ============================================================
 #  VERİTABANI
