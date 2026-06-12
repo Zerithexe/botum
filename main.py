@@ -6,6 +6,7 @@ Tüm sistemler dahil: Caps Lock Filtresi, Detaylı Log, Çekiliş Rolü, Muafiye
 # --- 1. BÖLÜM: KURALLAR (IMPORTLAR) ---
 import discord
 from discord.ext import commands, tasks
+import discord.app_commands as app_commands
 import os
 from dotenv import load_dotenv
 
